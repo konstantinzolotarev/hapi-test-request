@@ -1,6 +1,6 @@
 {
   "name": "hapi-test-request",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Hapi request helper for testing",
   "main": "lib/index.js",
   "scripts": {
