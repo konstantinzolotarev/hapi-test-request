@@ -1,6 +1,6 @@
 # Hapi request test helper
 
-[![Build Status](https://travis-ci.org/konstantinzolotarev/hapi-test-request.svg?branch=master](https://travis-ci.org/konstantinzolotarev/hapi-test-request)
+[![Build Status](https://travis-ci.org/konstantinzolotarev/hapi-test-request.svg?branch=master)](https://travis-ci.org/konstantinzolotarev/hapi-test-request)
 
 HTTP assertions made easy for Hapi using Promises
 
