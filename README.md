@@ -1,5 +1,7 @@
 # Hapi request test helper
 
+[![Build Status](ci-image)](ci-url)
+
 HTTP assertions made easy for Hapi using Promises
 
 ## Requirements
@@ -36,3 +38,9 @@ let.it('something', (done) => {
   prefix: '/api/v1' // Will add prefix for all requests
 }
 ```
+
+## License
+[MIT](https://github.com/konstantinzolotarev/hapi-test-request/blob/master/LICENSE)
+
+[ci-image]: https://travis-ci.org/konstantinzolotarev/hapi-test-request.svg?branch=master
+[ci-url]: https://travis-ci.org/konstantinzolotarev/hapi-test-request
