@@ -14,8 +14,55 @@ This module requires Node.js v4.1+
 
 ## Usage
 
+Server file should export server `server.js`:
 ```javascript
-const server = require('../../app');
+'use strict';
+
+const Hapi = require('hapi');
+
+// Create a server with a host and port
+const server = new Hapi.Server();
+server.connection({
+    host: 'localhost',
+    port: 8000
+});
+
+// Add the route
+server.route({
+    method: 'GET',
+    path:'/hello',
+    handler: function (request, reply) {
+      return reply({
+        test: true
+      });
+    }
+});
+
+server.route({
+  method: 'GET',
+  path: '/api/v1/test',
+  handler: function (request, reply) {
+    reply({
+      test: true
+    });
+  }
+});
+
+// Start the server
+server.start((err) => {
+    if (err) {
+        throw err;
+    }
+});
+
+// !!!!!!!
+module.exports = server;
+
+```
+
+Example of `some.test.js`:
+```javascript
+const server = require('../server.js');
 const request = require('hapi-test-request')(server);
 
 //...
@@ -42,5 +89,27 @@ let.it('something', (done) => {
 }
 ```
 
+Example:
+```javascript
+const server = require('./server');
+const request = require('hapi-test-request');
+const lab = require('lab');
+
+lab.it('Some tests', (done) => {
+  const config = {
+    prefix: '/api/v1'
+  };
+  request(server, config)
+    .call({
+      method: 'GET',
+      url: '/test' // will be merged with prefix. Will be called: /api/v1/test
+    })
+    .then((res) => {
+      expect(res.statusCode).to.equal(200);
+    })
+    .then(done)
+    .catch(done);
+});
+```
 ## License
 [MIT](https://github.com/konstantinzolotarev/hapi-test-request/blob/master/LICENSE)
