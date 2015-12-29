@@ -20,6 +20,16 @@ server.route({
     }
 });
 
+server.route({
+  method: 'GET',
+  path: '/api/v1/test',
+  handler: function (request, reply) {
+    reply({
+      test: true
+    });
+  }
+});
+
 // Start the server
 server.start((err) => {
     if (err) {

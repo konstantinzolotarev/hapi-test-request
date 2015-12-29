@@ -4,7 +4,7 @@
   "description": "Hapi request helper for testing",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node ./node_modules/mocha/bin/mocha test"
   },
   "keywords": [
     "hapi",

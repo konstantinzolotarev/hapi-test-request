@@ -41,4 +41,23 @@ describe('call() method :: ', () => {
       .then(done)
       .catch(done);
   });
+
+  it('should use prefix config option', (done) => {
+    const config = {
+      prefix: '/api/v1'
+    };
+    request(server, config)
+      .call({
+        method: 'GET',
+        url: '/test'
+      })
+      .then((res) => {
+        expect(res.statusCode).to.be.eq(200);
+        expect(res.result).to.be.an('object')
+          .and.to.have.property('test')
+          .and.to.be.eq(true);
+      })
+      .then(done)
+      .catch(done);
+  });
 });

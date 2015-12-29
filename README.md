@@ -28,3 +28,11 @@ let.it('something', (done) => {
   });
 });
 ```
+
+## Options for testing
+
+```javascript
+{
+  prefix: '/api/v1' // Will add prefix for all requests
+}
+```
