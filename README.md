@@ -1,6 +1,6 @@
 # Hapi request test helper
 
-[![Build Status](ci-image)](ci-url)
+[![Build Status](https://travis-ci.org/konstantinzolotarev/hapi-test-request.svg?branch=master](https://travis-ci.org/konstantinzolotarev/hapi-test-request)
 
 HTTP assertions made easy for Hapi using Promises
 
@@ -41,6 +41,3 @@ let.it('something', (done) => {
 
 ## License
 [MIT](https://github.com/konstantinzolotarev/hapi-test-request/blob/master/LICENSE)
-
-[ci-image]: https://travis-ci.org/konstantinzolotarev/hapi-test-request.svg?branch=master
-[ci-url]: https://travis-ci.org/konstantinzolotarev/hapi-test-request
